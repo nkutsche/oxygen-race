@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<finish>
+<!--  
+    STEP 15:
+    Finish! You have arived the finish!
+    Now follow the last direction:
+    -->
+    <do>
+        if(not(hear('First!')) 
+        then(shout('First!')) 
+        else(loose())
+    </do>
+</finish>
