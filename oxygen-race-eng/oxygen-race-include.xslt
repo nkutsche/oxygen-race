@@ -14,6 +14,6 @@
         	STEP 5:
         	Where was this template declared?
         	-->
-        <xsl:call-template name="template1"/>
+        <xsl:call-template name="template"/>
     </xsl:template>
 </xsl:stylesheet>

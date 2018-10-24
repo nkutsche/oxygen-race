@@ -584,12 +584,11 @@
         <xsl:attribute name="as" select="."/>
     </xsl:template>
 
-    <xsl:template match="sqf:user-entry" mode="copy" priority="101">
+    <xsl:template match="sqf:user-entry" priority="101">
         <xsl:param name="messageId" tunnel="yes" required="yes"/>
         <xsl:variable name="paramAttr" select="(@name, @type, @default)"/>
         <xsl:copy copy-namespaces="no">
             <xsl:copy-of select="@* except $paramAttr"/>
-            <xsl:apply-templates mode="#current"/>
             <xsl:if test="@default">
                 <axsl:variable name="es:default" select="{@default}"/>
             </xsl:if>
