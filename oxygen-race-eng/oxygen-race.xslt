@@ -83,7 +83,17 @@
 
     <xsl:variable name="globalFixes" select="/*/sqf:fixes/sqf:fix"/>
     <xsl:variable name="globalGroups" select="/*/sqf:fixes/sqf:group"/>
-
+    
+    
+    
+    <xsl:output method="xml" encoding="UTF-8" name="sqf:fixes"/>
+    <!--    
+    STEP 7c:
+    Where was this format used?
+    -->
+    <xsl:output name="sqf:fix"/>
+    
+    
     <!--
     Extension template
     call to use sqf:fix elements
@@ -114,7 +124,7 @@
             <xsl:value-of select="key('param', bla)"/>
             <!--		 
 		    STEP 13:
-		    Go to line 589 
+		    Go to line 624 
 		    -->
             <xsl:apply-templates select="
                     ($availableFixes | $availableGroups)[@id = $fix-calls],
@@ -219,7 +229,7 @@
                     <sqf:createExternals type="template">
                         <bxsl:template match="node() | @*" priority="-2" mode="addChild addLastChild"/>
                     </sqf:createExternals>
-                    <bxsl:template match="node() | @*" priority="-3" mode="#all">
+                    <bxsl:template match="node() | @*" priority="-3">
                         <bxsl:param name="xsm:xml-save-mode" tunnel="yes" select="false()" as="xs:boolean"/>
                         <bxsl:choose>
                             <bxsl:when test="$xsm:xml-save-mode">
@@ -463,7 +473,25 @@
             </axsl:for-each>
         </axsl:for-each-group>
     </xsl:template>
+    
 
+    <xsl:variable name="sampleDefault">
+        <sqf:fix id="sample">
+            <sqf:title>This is sample</sqf:title>
+        </sqf:fix>
+        <sqf:fix id="default">
+            <sqf:title>This is default</sqf:title>
+        </sqf:fix>
+    </xsl:variable>
+    <xsl:template match="sqf:fixes">
+        <!--   
+        STEP 7b:
+        Find the declaration of the refered format:
+        -->
+        <xsl:result-document href="allfixes_{generate-id()}.xml" format="sqf:fixes">
+            
+        </xsl:result-document>
+    </xsl:template>
     
 
 
@@ -473,22 +501,22 @@
     <xsl:template match="sqf:add/@select | sqf:replace/@select | sqf:stringReplace/@select" mode="template" priority="20">
         <bxsl:sequence select="es:selectValue(({.}))"/>
     </xsl:template>
-
-
-
-
-
-
-
-    <!--   
-    Content of activity elements
--->
-    <xsl:template match="sqf:fix//node()" mode="template">
-        <xsl:copy>
-            <xsl:apply-templates select="@*" mode="template"/>
-            <xsl:apply-templates select="node()" mode="template"/>
-        </xsl:copy>
+    <xsl:template match="sqf:fix" mode="template">
+        <xsl:result-document href="fix.xml" format="sqf:fix">
+            <!--    
+            STEP 7d:
+            Where was this template declared?
+            -->
+            <xsl:call-template name="sqf:keep"/>
+        </xsl:result-document>
     </xsl:template>
+
+
+
+
+    
+
+    
     <xsl:template match="sqf:fix//@*" priority="10" mode="template">
         <axsl:attribute name="{name()}">
             <xsl:value-of select="."/>
@@ -515,7 +543,7 @@
     <!--
         Implementation of sqf:KEEP (depreciated)
     -->
-    <xsl:template match="sqf:keep" mode="#all" priority="10">
+    <xsl:template match="sqf:keep" mode="#all" name="sqf:keep" priority="10">
         <!--
 				STEP 8:
 				Find the next xsl:message element
@@ -531,7 +559,7 @@
     <!--
     Implementation of sqf:copy-of/es:copy-of with unparsed-mode
     -->
-    <xsl:template match="es:copy-of[@unparsed-mode = 'true'][$xsm:xml-save-mode] | sqf:copy-of[@unparsed-mode = 'true'][$xsm:xml-save-mode]" mode="#all" priority="15">
+    <xsl:template match="es:copy-of[@unparsed-mode = 'true'][$xsm:xml-save-mode] | sqf:copy-of[@unparsed-mode = 'true'][$xsm:xml-save-mode]" mode="copy" priority="15">
         <bxsl:for-each select="({@select})/es:getNodePath(.)">
             <xsm:copy>
                 <bxsl:attribute name="select" select="."/>
@@ -541,7 +569,7 @@
     <!--
     Implementation of sqf:copy-of/es:copy-of without unparsed-mode
     -->
-    <xsl:template match="es:copy-of | sqf:copy-of" mode="#all" priority="10">
+    <xsl:template match="es:copy-of | sqf:copy-of" mode="copy" priority="10">
         <bxsl:copy-of select="{@select}"/>
     </xsl:template>
 
@@ -637,16 +665,26 @@
     <!--
         Implementation of sqf:description
     -->
-    <xsl:template match="sqf:description/sqf:p" mode="#all" priority="100">
+    <xsl:template match="sqf:description/sqf:p" mode="copy" priority="100">
         <svrl:text>
             <xsl:apply-templates/>
         </svrl:text>
     </xsl:template>
-    <xsl:template match="sqf:description/sqf:title" mode="#all" priority="100">
-        <sqf:title>
-            <xsl:apply-templates/>
-        </sqf:title>
-    </xsl:template>
+
+    <xsl:template match="sqf:description/sqf:title" mode="fix" priority="100"/>
+    <!--    
+    STEP 7a:
+    Find the variable with exact the same content:
+    -->
+    <xsl:variable name="buildIn">
+        <sqf:fix id="sample">
+            <sqf:title>This is sample</sqf:title>
+        </sqf:fix>
+        <sqf:fix id="default">
+            <sqf:title>This is default</sqf:title>
+        </sqf:fix>
+    </xsl:variable>
+    
     <xsl:template match="sqf:description"/>
 
 
@@ -677,9 +715,9 @@
 -->
     <!--	
 	STEP 7:
-	Find all templates in the mode "copy"
+	Find all templates in the mode "fix"
 	-->
-    <xsl:template name="setVarContext" match="sqf:fix" mode="copy">
+    <xsl:template name="setVarContext" match="sqf:fix" mode="fix">
         <xsl:param name="use-for-each" as="xs:string?" tunnel="yes"/>
         <xsl:param name="messageId" as="xs:string"/>
         <xsl:param name="templateBody" as="node()*"/>
