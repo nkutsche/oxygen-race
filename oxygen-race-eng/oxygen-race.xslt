@@ -677,7 +677,7 @@
 -->
     <!--	
 	STEP 7:
-	Find all templates in the mode "Code"
+	Find all templates in the mode "copy"
 	-->
     <xsl:template name="setVarContext" match="sqf:fix" mode="copy">
         <xsl:param name="use-for-each" as="xs:string?" tunnel="yes"/>
