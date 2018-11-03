@@ -4,19 +4,6 @@
         
     This file is part of Escali Schematron.
     
-    Escali Schematron is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-    
-    Escali Schematron is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-    
-    You should have received a copy of the GNU General Public License
-    along with Escali Schematron.  If not, see http://www.gnu.org/licenses/gpl-3.0.
-
 -->
 <!--
 	STEP 2:
@@ -124,7 +111,7 @@
             <xsl:value-of select="key('param', bla)"/>
             <!--		 
 		    STEP 13:
-		    Go to line 624 
+		    Go to line 612
 		    -->
             <xsl:apply-templates select="
                     ($availableFixes | $availableGroups)[@id = $fix-calls],
@@ -412,7 +399,7 @@
 
 
     <!--    
-    STEP 14:
+    STEP 15:
     Open this document:
     -->
     <xsl:param name="dokument" select="'oxygen-race-finish.xml'"/>
@@ -715,7 +702,7 @@
 -->
     <!--	
 	STEP 7:
-	Find all templates in the mode "fix"
+	Find all templates which are matching in the mode "fix"
 	-->
     <xsl:template name="setVarContext" match="sqf:fix" mode="fix">
         <xsl:param name="use-for-each" as="xs:string?" tunnel="yes"/>

@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <finish>
 <!--  
-    STEP 15:
+    STEP 16:
     Finish! You have arived the finish line!
-    Now follow the last direction:
+    Now follow the last instruction:
     -->
     <do>
         if(not(hear('First!')) 
         then(shout('First!')) 
         else(loose())
     </do>
+    
+    function loose(){
+        echo 'Don't be sad!'
+        echo 'Find ways to be faster here: ../solution/Solution.md'
+    }
+    
 </finish>
