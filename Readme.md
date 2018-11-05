@@ -1,12 +1,12 @@
 # Nico's Oxygen Navigation Race 
 
-For developers of large and very complex programs a basic challange is to keep the overview of there code. Finding of usage of variables, navigating to function declarations, searching for specific code lines, all these are usual and basic tasks of navigation in code projects.
+For developers of large and very complex programs a basic challange is to keep the overview of there code. Finding of usage of variables, navigating to function declarations, searching for specific code lines – all these are usual and basic tasks of navigation in code projects.
 
 Fast and eficient navigation is very important for the developers. Beside of saving time, they are able to focus on the essential: the logic of the code. If you search to long for the correct code line, you will forget, why you searched for it.  
 
 Modern and powerfull IDEs provides many functions to help the developers on the complex navigation.
 Basically each has an search and replace function, but by analyzing the code, it is able to lead the developers much more precise to their search result.
-For instance it knows by compiling where functions or variables was declared and can respect language specific rules like function overloading or variable scopes.  
+For instance it knows by compiling the code where functions or variables was declared and can respect language specific rules like function overloading or variable scopes.  
 
 In the XML world one of the leading IDEs is the Oxygen XML Editor and it is also my favorite. One reason is, that it has lots of little features, hints and tricks for better navigation in and editing of XSLT stylesheets. I have now 10 years experiences with Oxygen, but I'm still not sure, that I found everything.
 
@@ -20,9 +20,11 @@ To teach our new developers of data2type in Oxygen, I wanted to make it more int
 
 The Oxygen Race makes fun, but each step is also a demonstration of at least one Oxygen feature.
 
-The "solution" video shows, how I would make the race:
+In the "solution" folder, I describe, how I would make the race, as:
 
-
+- 
+[solution/Solution.md](solution/Solution.md)Description
+- [solution/solution.gif](solution/solution.gif)Video
 
 Please let me know if you know for a step a shorter way or know a feature, which is not covered by the current race.
 
