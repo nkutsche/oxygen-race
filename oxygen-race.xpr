@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project version="19.1">
-	<meta>
-		<filters directoryPatterns="" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
-		<options>
-			<serialized version="19.1" xml:space="preserve">
+<project version="19.0">
+    <meta>
+        <filters directoryPatterns="xslt-framework" filePatterns="" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options>
+            <serialized version="19.0" xml:space="preserve">
                 <serializableOrderedMap>
                     <entry>
                         <String>additional.frameworks.directories</String>
@@ -29,12 +29,12 @@
                     </entry>
                 </serializableOrderedMap>
             </serialized>
-		</options>
-	</meta>
-	<projectTree name="oxygen-race.xpr">
-		<folder masterFiles="true" name="Master Files">
-			<file name="oxygen-race-en/oxygen-race.xslt"/>
-		</folder>
-		<folder path="."/>
-	</projectTree>
+        </options>
+    </meta>
+    <projectTree name="oxygen-race.xpr">
+        <folder masterFiles="true" name="Master Files">
+            <file name="oxygen-race-en/oxygen-race.xslt"/>
+        </folder>
+        <folder path="."/>
+    </projectTree>
 </project>
