@@ -33,7 +33,7 @@
 	</meta>
 	<projectTree name="oxygen-race.xpr">
 		<folder masterFiles="true" name="Master Files">
-			<file name="oxygen-race-eng/oxygen-race.xslt"/>
+			<file name="oxygen-race-en/oxygen-race.xslt"/>
 		</folder>
 		<folder path="."/>
 	</projectTree>
