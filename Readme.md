@@ -22,7 +22,7 @@ The Oxygen Race makes fun, but each step is also a demonstration of at least one
 
 ## Start and Rules
 
-To start, just open the 
+To start, just checkout this project, open the 
 [Oxygen project](oxygen-race.xpr) in the Oxygen and open there the 
 [start.xhtml](oxygen-race-en/start.xhtml). But don't forget to check the 
 [rules](oxygen-race-en/rules.xhtml) before you start.
