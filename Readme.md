@@ -20,6 +20,11 @@ To teach our new developers of data2type in Oxygen, I wanted to make it more int
 
 The Oxygen Race makes fun, but each step is also a demonstration of at least one Oxygen feature.
 
+To start, just open the 
+[Oxygen project](oxygen-race.xpr) in the Oxygen and open there the 
+[start.xhtml](oxygen-race-en/start.xhtml). But don't forget to check the 
+[rules](oxygen-race-en/rules.xhtml) before you start.
+
 In the "solution" folder, I describe, how I would make the race, as:
 
 - 
