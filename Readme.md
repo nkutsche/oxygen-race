@@ -23,8 +23,8 @@ The Oxygen Race makes fun, but each step is also a demonstration of at least one
 In the "solution" folder, I describe, how I would make the race, as:
 
 - 
-[solution/Solution.md](solution/Solution.md)Description
-- [solution/solution.gif](solution/solution.gif)Video
+[Description](solution/Solution.md)
+- [Video](solution/solution.gif)
 
 Please let me know if you know for a step a shorter way or know a feature, which is not covered by the current race.
 
