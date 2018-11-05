@@ -31,8 +31,7 @@ To start, just open the
 
 In the "solution" folder, I describe, how I would make the race, as:
 
-- 
-[Description](solution/Solution.md)
+- [Description](solution/Solution.md)
 - [Video](solution/solution.gif)
 
 Please let me know if you know for a step a shorter way or know a feature, which is not covered by the current race.
