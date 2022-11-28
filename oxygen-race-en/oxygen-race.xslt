@@ -877,7 +877,7 @@
     <xsl:template match="sqf:add">
         <!--	
 		STEP 10:
-		Where was this d2t:function function declared?
+		Where was this sqf:function function declared?
 		-->
         <xsl:param name="messageId" select="sqf:function(.)" tunnel="yes"/>
         <xsl:param name="es:regex" tunnel="yes" as="xs:string?"/>

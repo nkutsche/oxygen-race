@@ -54,7 +54,7 @@ This is a searching task. To select the content of the variable easly, you can c
 
 #### STEP 7b: Find the declaration of the refered format
 
-Press `ctrl` and click on the value of the `format` attribute (`"sqf:fixes"`). You will jump to the delecation of the format.
+Press `ctrl` and click on the value of the `format` attribute (`"sqf:fixes"`). You will jump to the declaration of the format.
 
 #### STEP 7c: Where was this format used?
 
@@ -80,13 +80,13 @@ Press `ctrl` and click on the function call (`sqf:function(.)`). You will jump t
 
 Press `ctrl` and click on the string, representing the key name (`'key'`). You will jump to the declaration of the key.
 
-Special feature: The `$key-name` paremter of the `key` function is not an usual reference to the used key, because the key function expects a string value for the key name. This means, that the key name can also be defined by another XPath expression. It is just common practice to specify a fix string for the `$key-name` parameter. The Oxygen has implemented an exception to recognize such key references. This works only if the `$key-name` parameter is a fix string. 
+Special feature: The `$key-name` paremter of the `key` function is not an usual reference to the used key, because the key function expects a string value for the key name. This means, that the key name can also be defined by another XPath expression. It is just common practice to specify a static string for the `$key-name` parameter. The Oxygen has implemented an exception to recognize such key references. This works only if the `$key-name` parameter is a static string. 
 
 ### STEP 12: Where was this key used?
 
 Click on the name of the `xsl:key` (`name="param"`) and you will see the marker on the *marker bar* where this key was used. By clicking on the marker you will jump directly to it.
 
-Same as for STEP 11: This works only if the `$key-name` parameter is a fix string.
+Same as for STEP 11: This works only if the `$key-name` parameter is a static string.
 
 ### STEP 13: Go to line 612
 
